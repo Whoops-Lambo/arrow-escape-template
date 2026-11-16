@@ -1,0 +1,19 @@
+package io.p071bidmachine.iab.vast.tags;
+
+import java.util.ArrayList;
+import java.util.EnumMap;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public final class m extends h {
+    public static final String[] g = {"skipoffset"};
+    public Float c;
+    public ArrayList d;
+    public s e;
+    public EnumMap f;
+
+    @Override // io.p071bidmachine.iab.vast.tags.q
+    public final String[] n() {
+        return g;
+    }
+}

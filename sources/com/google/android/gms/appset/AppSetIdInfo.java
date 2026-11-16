@@ -1,0 +1,35 @@
+package com.google.android.gms.appset;
+
+import androidx.annotation.NonNull;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public class AppSetIdInfo {
+    public static final int SCOPE_APP = 1;
+    public static final int SCOPE_DEVELOPER = 2;
+
+    @NonNull
+    private final String zza;
+    private final int zzb;
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface Scope {
+    }
+
+    @NonNull
+    public String getId() {
+        return this.zza;
+    }
+
+    public int getScope() {
+        return this.zzb;
+    }
+
+    public AppSetIdInfo(@NonNull String str, int i) {
+        this.zza = str;
+        this.zzb = i;
+    }
+}

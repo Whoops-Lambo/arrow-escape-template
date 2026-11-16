@@ -1,0 +1,19 @@
+package io.p071bidmachine.iab.vast.tags;
+
+import com.ironsource.C4981t;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public final class n extends q {
+    public static final String[] c = {C4981t.g, "type", "width", "height", "codec", "id", "bitrate", "minBitrate", "maxBitrate", "scalable", "maintainAspectRatio", "apiFramework"};
+
+    @Override // io.p071bidmachine.iab.vast.tags.q
+    public final boolean r() {
+        return true;
+    }
+
+    @Override // io.p071bidmachine.iab.vast.tags.q
+    public final String[] n() {
+        return c;
+    }
+}

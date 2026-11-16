@@ -1,0 +1,42 @@
+package com.fyber.inneractive.sdk.config.global;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import org.json.JSONArray;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+public final class c implements d {
+    public final HashSet a = new HashSet();
+    public final boolean b;
+
+    @Override // com.fyber.inneractive.sdk.config.global.d
+    public final boolean a(e eVar) {
+        if (this.a.isEmpty() || eVar.a == null) {
+            return false;
+        }
+        Iterator it = this.a.iterator();
+        while (it.hasNext()) {
+            if (((Long) it.next()).equals(eVar.a)) {
+                return !this.b;
+            }
+        }
+        return this.b;
+    }
+
+    public final String toString() {
+        return String.format("%s - %s include: %b", "demand", this.a, Boolean.valueOf(this.b));
+    }
+
+    public c(JSONArray jSONArray, boolean z) {
+        if (jSONArray != null) {
+            for (int i = 0; i < jSONArray.length(); i++) {
+                long jOptLong = jSONArray.optLong(i);
+                if (jOptLong != 0) {
+                    this.a.add(Long.valueOf(jOptLong));
+                }
+            }
+        }
+        this.b = z;
+    }
+}

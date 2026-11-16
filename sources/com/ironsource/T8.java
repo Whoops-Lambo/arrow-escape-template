@@ -1,0 +1,12 @@
+package com.ironsource;
+
+import android.content.Context;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes4.dex */
+public interface T8 {
+    @Nullable
+    String a(@NotNull Context context, @NotNull EnumC5094z4 enumC5094z4, @NotNull String str);
+}

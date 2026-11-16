@@ -1,0 +1,27 @@
+package com.unity3d.mediation.adapters.levelplay;
+
+import android.content.Context;
+import com.ironsource.InterfaceC5075y3;
+import com.ironsource.mediationsdk.adunit.adapter.BaseNativeAd;
+import com.ironsource.mediationsdk.adunit.adapter.utility.AdData;
+import com.ironsource.mediationsdk.bidding.BiddingDataCallback;
+import com.ironsource.mediationsdk.model.NetworkSettings;
+import com.unity3d.mediation.adapters.levelplay.LevelPlayBaseAdapter;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class LevelPlayBaseNativeAd<NetworkAdapter extends LevelPlayBaseAdapter> extends BaseNativeAd<NetworkAdapter> implements InterfaceC5075y3 {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public LevelPlayBaseNativeAd(@NotNull NetworkSettings networkSettings) {
+        super(networkSettings);
+        networkSettings.getClass();
+    }
+
+    @Override // com.ironsource.InterfaceC5075y3
+    public void collectBiddingData(@Nullable AdData adData, @NotNull Context context, @NotNull BiddingDataCallback biddingDataCallback) {
+        context.getClass();
+        biddingDataCallback.getClass();
+    }
+}

@@ -1,0 +1,17 @@
+package com.mbridge.msdk.playercommon.exoplayer2.extractor.mp4;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+final class DefaultSampleValues {
+    public final int duration;
+    public final int flags;
+    public final int sampleDescriptionIndex;
+    public final int size;
+
+    public DefaultSampleValues(int i, int i2, int i3, int i4) {
+        this.sampleDescriptionIndex = i;
+        this.duration = i2;
+        this.size = i3;
+        this.flags = i4;
+    }
+}

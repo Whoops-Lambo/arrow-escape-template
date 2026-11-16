@@ -1,0 +1,173 @@
+package okio;
+
+import com.mbridge.msdk.foundation.entity.CampaignEx;
+import defpackage.ak1;
+import defpackage.d;
+import defpackage.dr0;
+import defpackage.jc1;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.zip.CRC32;
+import java.util.zip.Inflater;
+import kotlin.Metadata;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0005\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0001¢\u0006\u0004\b\u0003\u0010\u0004J\u000f\u0010\u0006\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\u0006\u0010\u0007J\u000f\u0010\b\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\b\u0010\u0007J'\u0010\u000e\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000bH\u0002¢\u0006\u0004\b\u000e\u0010\u000fJ'\u0010\u0015\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u0012H\u0002¢\u0006\u0004\b\u0015\u0010\u0016J\u001f\u0010\u0018\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u000bH\u0016¢\u0006\u0004\b\u0018\u0010\u0019J\u000f\u0010\u001b\u001a\u00020\u001aH\u0016¢\u0006\u0004\b\u001b\u0010\u001cJ\u000f\u0010\u001d\u001a\u00020\u0005H\u0016¢\u0006\u0004\b\u001d\u0010\u0007R\u0016\u0010\u001f\u001a\u00020\u001e8\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b\u001f\u0010 R\u0014\u0010\u0002\u001a\u00020!8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0002\u0010\"R\u0014\u0010$\u001a\u00020#8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b$\u0010%R\u0014\u0010'\u001a\u00020&8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b'\u0010(R\u0014\u0010*\u001a\u00020)8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b*\u0010+¨\u0006,"}, d2 = {"Lokio/GzipSource;", "Lokio/Source;", "source", "<init>", "(Lokio/Source;)V", "Laz2;", "consumeHeader", "()V", "consumeTrailer", "Lokio/Buffer;", "buffer", "", "offset", "byteCount", "updateCrc", "(Lokio/Buffer;JJ)V", "", "name", "", "expected", "actual", "checkEqual", "(Ljava/lang/String;II)V", "sink", "read", "(Lokio/Buffer;J)J", "Lokio/Timeout;", "timeout", "()Lokio/Timeout;", CampaignEx.JSON_NATIVE_VIDEO_CLOSE, "", "section", "B", "Lokio/RealBufferedSource;", "Lokio/RealBufferedSource;", "Ljava/util/zip/Inflater;", "inflater", "Ljava/util/zip/Inflater;", "Lokio/InflaterSource;", "inflaterSource", "Lokio/InflaterSource;", "Ljava/util/zip/CRC32;", "crc", "Ljava/util/zip/CRC32;", "okio"}, k = 1, mv = {1, 9, 0}, xi = 48)
+public final class GzipSource implements Source {
+
+    @NotNull
+    private final CRC32 crc;
+
+    @NotNull
+    private final Inflater inflater;
+
+    @NotNull
+    private final InflaterSource inflaterSource;
+    private byte section;
+
+    @NotNull
+    private final RealBufferedSource source;
+
+    @Override // okio.Source
+    public long read(@NotNull Buffer sink, long byteCount) throws IOException {
+        sink.getClass();
+        if (byteCount < 0) {
+            ak1.n(jc1.l(byteCount, "byteCount < 0: "));
+            return 0L;
+        }
+        if (byteCount == 0) {
+            return 0L;
+        }
+        if (this.section == 0) {
+            consumeHeader();
+            this.section = (byte) 1;
+        }
+        if (this.section == 1) {
+            long size = sink.size();
+            long j = this.inflaterSource.read(sink, byteCount);
+            if (j != -1) {
+                updateCrc(sink, size, j);
+                return j;
+            }
+            this.section = (byte) 2;
+        }
+        if (this.section == 2) {
+            consumeTrailer();
+            this.section = (byte) 3;
+            if (!this.source.exhausted()) {
+                dr0.h("gzip finished without exhausting source");
+                return 0L;
+            }
+        }
+        return -1L;
+    }
+
+    private final void checkEqual(String name, int expected, int actual) throws IOException {
+        if (actual != expected) {
+            throw new IOException(String.format("%s: actual 0x%08x != expected 0x%08x", Arrays.copyOf(new Object[]{name, Integer.valueOf(actual), Integer.valueOf(expected)}, 3)));
+        }
+    }
+
+    private final void consumeHeader() throws IOException {
+        this.source.require(10L);
+        byte b = this.source.bufferField.getByte(3L);
+        boolean z = ((b >> 1) & 1) == 1;
+        if (z) {
+            updateCrc(this.source.bufferField, 0L, 10L);
+        }
+        checkEqual("ID1ID2", 8075, this.source.readShort());
+        this.source.skip(8L);
+        if (((b >> 2) & 1) == 1) {
+            this.source.require(2L);
+            if (z) {
+                updateCrc(this.source.bufferField, 0L, 2L);
+            }
+            long shortLe = this.source.bufferField.readShortLe() & 65535;
+            this.source.require(shortLe);
+            if (z) {
+                updateCrc(this.source.bufferField, 0L, shortLe);
+            }
+            this.source.skip(shortLe);
+        }
+        if (((b >> 3) & 1) == 1) {
+            long jIndexOf = this.source.indexOf((byte) 0);
+            if (jIndexOf == -1) {
+                d.s();
+                return;
+            } else {
+                if (z) {
+                    updateCrc(this.source.bufferField, 0L, jIndexOf + 1);
+                }
+                this.source.skip(jIndexOf + 1);
+            }
+        }
+        if (((b >> 4) & 1) == 1) {
+            long jIndexOf2 = this.source.indexOf((byte) 0);
+            if (jIndexOf2 == -1) {
+                d.s();
+                return;
+            } else {
+                if (z) {
+                    updateCrc(this.source.bufferField, 0L, jIndexOf2 + 1);
+                }
+                this.source.skip(jIndexOf2 + 1);
+            }
+        }
+        if (z) {
+            checkEqual("FHCRC", this.source.readShortLe(), (short) this.crc.getValue());
+            this.crc.reset();
+        }
+    }
+
+    private final void consumeTrailer() throws IOException {
+        checkEqual("CRC", this.source.readIntLe(), (int) this.crc.getValue());
+        checkEqual("ISIZE", this.source.readIntLe(), (int) this.inflater.getBytesWritten());
+    }
+
+    private final void updateCrc(Buffer buffer, long offset, long byteCount) {
+        Segment segment = buffer.head;
+        segment.getClass();
+        while (true) {
+            int i = segment.limit;
+            int i2 = segment.pos;
+            if (offset < i - i2) {
+                break;
+            }
+            offset -= (long) (i - i2);
+            segment = segment.next;
+            segment.getClass();
+        }
+        while (byteCount > 0) {
+            int i3 = (int) (((long) segment.pos) + offset);
+            int iMin = (int) Math.min(segment.limit - i3, byteCount);
+            this.crc.update(segment.data, i3, iMin);
+            byteCount -= (long) iMin;
+            segment = segment.next;
+            segment.getClass();
+            offset = 0;
+        }
+    }
+
+    @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
+    public void close() throws IOException {
+        this.inflaterSource.close();
+    }
+
+    @Override // okio.Source
+    @NotNull
+    public Timeout timeout() {
+        return this.source.timeout();
+    }
+
+    public GzipSource(@NotNull Source source) {
+        source.getClass();
+        RealBufferedSource realBufferedSource = new RealBufferedSource(source);
+        this.source = realBufferedSource;
+        Inflater inflater = new Inflater(true);
+        this.inflater = inflater;
+        this.inflaterSource = new InflaterSource((BufferedSource) realBufferedSource, inflater);
+        this.crc = new CRC32();
+    }
+}

@@ -1,0 +1,33 @@
+package com.google.android.gms.ads.internal.util;
+
+import android.content.SharedPreferences;
+import java.util.Iterator;
+import java.util.Objects;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+final class zzbw implements SharedPreferences.OnSharedPreferenceChangeListener {
+    final /* synthetic */ zzbz zza;
+    private final String zzb;
+
+    @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener
+    public final void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str) {
+        zzbz zzbzVar = this.zza;
+        synchronized (zzbzVar) {
+            try {
+                Iterator it = zzbzVar.zzd().iterator();
+                while (it.hasNext()) {
+                    ((zzbx) it.next()).zza(sharedPreferences, this.zzb, str);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public zzbw(zzbz zzbzVar, String str) {
+        Objects.requireNonNull(zzbzVar);
+        this.zza = zzbzVar;
+        this.zzb = str;
+    }
+}

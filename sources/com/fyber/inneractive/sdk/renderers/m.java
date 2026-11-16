@@ -1,0 +1,20 @@
+package com.fyber.inneractive.sdk.renderers;
+
+import com.vungle.ads.internal.protos.Sdk;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public enum m {
+    BANNER_WIDTH(Sdk.SDKError.Reason.WEBVIEW_ERROR_VALUE),
+    BANNER_HEIGHT(50),
+    BANNER_TABLET_HEIGHT(90),
+    BANNER_TABLET_WIDTH(728),
+    RECTANGLE_HEIGHT(250),
+    RECTANGLE_WIDTH(300);
+
+    final int value;
+
+    m(int i) {
+        this.value = i;
+    }
+}

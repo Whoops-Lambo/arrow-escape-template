@@ -1,0 +1,39 @@
+package io.p071bidmachine.media3.common.util;
+
+import android.graphics.SurfaceTexture;
+import android.opengl.EGLContext;
+import android.opengl.EGLDisplay;
+import android.opengl.EGLSurface;
+import android.os.Handler;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes3.dex */
+public final class f implements SurfaceTexture.OnFrameAvailableListener, Runnable {
+    public static final int[] g = {12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12327, 12344, 12339, 4, 12344};
+    public final Handler a;
+    public final int[] b = new int[1];
+    public EGLDisplay c;
+    public EGLContext d;
+    public EGLSurface e;
+    public SurfaceTexture f;
+
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
+        this.a.post(this);
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        SurfaceTexture surfaceTexture = this.f;
+        if (surfaceTexture != null) {
+            try {
+                surfaceTexture.updateTexImage();
+            } catch (RuntimeException unused) {
+            }
+        }
+    }
+
+    public f(Handler handler) {
+        this.a = handler;
+    }
+}

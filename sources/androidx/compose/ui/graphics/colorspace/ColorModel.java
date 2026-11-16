@@ -1,0 +1,48 @@
+package androidx.compose.ui.graphics.colorspace;
+
+import androidx.compose.runtime.Immutable;
+import kotlin.Metadata;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+@Immutable
+@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\b\u0087@\u0018\u00002\u00020\u0001:\u0001\u0002\u0088\u0001\u0003\u0092\u0001\u00020\u0004ø\u0001\u0000\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006\u0005"}, d2 = {"Landroidx/compose/ui/graphics/colorspace/ColorModel;", "", "Companion", "packedValue", "", "ui-graphics_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+public final class ColorModel {
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    @Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Landroidx/compose/ui/graphics/colorspace/ColorModel$Companion;", "", "ui-graphics_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+    public static final class Companion {
+    }
+
+    public static final boolean a(long j, long j2) {
+        return j == j2;
+    }
+
+    public final boolean equals(Object obj) {
+        return obj instanceof ColorModel;
+    }
+
+    public final int hashCode() {
+        return Long.hashCode(0L);
+    }
+
+    public final String toString() {
+        return b(0L);
+    }
+
+    public static String b(long j) {
+        if (a(j, 12884901888L)) {
+            return "Rgb";
+        }
+        if (a(j, 12884901889L)) {
+            return "Xyz";
+        }
+        if (a(j, 12884901890L)) {
+            return "Lab";
+        }
+        if (a(j, 17179869187L)) {
+            return "Cmyk";
+        }
+        return "Unknown";
+    }
+}

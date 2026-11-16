@@ -1,0 +1,116 @@
+package com.unity3d.ads.core.data.datasource;
+
+import defpackage.e80;
+import defpackage.h50;
+import kotlin.Metadata;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+@Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b6\u0018\u00002\u00020\u0001:\u0002\u0004\u0005B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\u0002\u0006\u0007¨\u0006\b"}, d2 = {"Lcom/unity3d/ads/core/data/datasource/VolumeSettingsChange;", "", "<init>", "()V", "MuteChange", "VolumeChange", "Lcom/unity3d/ads/core/data/datasource/VolumeSettingsChange$MuteChange;", "Lcom/unity3d/ads/core/data/datasource/VolumeSettingsChange$VolumeChange;", "unity-ads_defaultRelease"}, k = 1, mv = {2, 1, 0}, xi = 48)
+public abstract class VolumeSettingsChange {
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\u0007\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\b\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0013\u0010\t\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u000bHÖ\u0003J\t\u0010\f\u001a\u00020\rHÖ\u0001J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0006¨\u0006\u0010"}, d2 = {"Lcom/unity3d/ads/core/data/datasource/VolumeSettingsChange$MuteChange;", "Lcom/unity3d/ads/core/data/datasource/VolumeSettingsChange;", "isMuted", "", "<init>", "(Z)V", "()Z", "component1", "copy", "equals", "other", "", "hashCode", "", "toString", "", "unity-ads_defaultRelease"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    public static final /* data */ class MuteChange extends VolumeSettingsChange {
+        private final boolean isMuted;
+
+        public MuteChange(boolean z) {
+            super(null);
+            this.isMuted = z;
+        }
+
+        public boolean equals(@Nullable Object other) {
+            if (this == other) {
+                return true;
+            }
+            return (other instanceof MuteChange) && this.isMuted == ((MuteChange) other).isMuted;
+        }
+
+        public static /* synthetic */ MuteChange copy$default(MuteChange muteChange, boolean z, int i, Object obj) {
+            if ((i & 1) != 0) {
+                z = muteChange.isMuted;
+            }
+            return muteChange.copy(z);
+        }
+
+        /* JADX INFO: renamed from: component1, reason: from getter */
+        public final boolean getIsMuted() {
+            return this.isMuted;
+        }
+
+        @NotNull
+        public final MuteChange copy(boolean isMuted) {
+            return new MuteChange(isMuted);
+        }
+
+        public int hashCode() {
+            return Boolean.hashCode(this.isMuted);
+        }
+
+        public final boolean isMuted() {
+            return this.isMuted;
+        }
+
+        @NotNull
+        public String toString() {
+            return h50.m(new StringBuilder("MuteChange(isMuted="), this.isMuted, ')');
+        }
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\b\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rHÖ\u0003J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0012"}, d2 = {"Lcom/unity3d/ads/core/data/datasource/VolumeSettingsChange$VolumeChange;", "Lcom/unity3d/ads/core/data/datasource/VolumeSettingsChange;", "volume", "", "<init>", "(D)V", "getVolume", "()D", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "unity-ads_defaultRelease"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    public static final /* data */ class VolumeChange extends VolumeSettingsChange {
+        private final double volume;
+
+        public VolumeChange(double d) {
+            super(null);
+            this.volume = d;
+        }
+
+        public boolean equals(@Nullable Object other) {
+            if (this == other) {
+                return true;
+            }
+            return (other instanceof VolumeChange) && Double.compare(this.volume, ((VolumeChange) other).volume) == 0;
+        }
+
+        public static /* synthetic */ VolumeChange copy$default(VolumeChange volumeChange, double d, int i, Object obj) {
+            if ((i & 1) != 0) {
+                d = volumeChange.volume;
+            }
+            return volumeChange.copy(d);
+        }
+
+        /* JADX INFO: renamed from: component1, reason: from getter */
+        public final double getVolume() {
+            return this.volume;
+        }
+
+        @NotNull
+        public final VolumeChange copy(double volume) {
+            return new VolumeChange(volume);
+        }
+
+        public final double getVolume() {
+            return this.volume;
+        }
+
+        public int hashCode() {
+            return Double.hashCode(this.volume);
+        }
+
+        @NotNull
+        public String toString() {
+            return "VolumeChange(volume=" + this.volume + ')';
+        }
+    }
+
+    public /* synthetic */ VolumeSettingsChange(e80 e80Var) {
+        this();
+    }
+
+    private VolumeSettingsChange() {
+    }
+}

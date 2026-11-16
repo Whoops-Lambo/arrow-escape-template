@@ -1,0 +1,18 @@
+package androidx.compose.ui.layout;
+
+import androidx.compose.ui.node.MeasureBlocks;
+import androidx.compose.ui.platform.JvmActuals_jvmKt;
+import kotlin.Metadata;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes3.dex */
+@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0018\u0002\n\u0000\b\n\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"androidx/compose/ui/layout/LayoutKt$MeasuringIntrinsicsMeasureBlocks$1", "Landroidx/compose/ui/node/MeasureBlocks;", "ui_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+public final class LayoutKt$MeasuringIntrinsicsMeasureBlocks$1 implements MeasureBlocks {
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(JvmActuals_jvmKt.a(this, "MeasuringIntrinsicsMeasureBlocks"));
+        sb.append("{ measureBlock=");
+        JvmActuals_jvmKt.a(null, null);
+        throw null;
+    }
+}

@@ -1,0 +1,14 @@
+package com.bytedance.sdk.component.yo.kgy.noq;
+
+import java.util.List;
+import java.util.Map;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public interface ahm {
+    Runnable kgy(uq uqVar, String str, Map<String, String> map);
+
+    void kgy(String str, List<String> list, boolean z, Map<String, String> map, int i, String str2);
+
+    void kgy(String str, boolean z);
+}

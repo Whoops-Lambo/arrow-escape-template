@@ -1,0 +1,14 @@
+package com.moloco.sdk.internal.services.bidtoken;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public abstract class e {
+    public static final f a;
+    public static final l b;
+
+    static {
+        f fVar = new f(false);
+        a = fVar;
+        b = new l("", "", fVar);
+    }
+}

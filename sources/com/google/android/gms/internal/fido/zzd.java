@@ -1,0 +1,31 @@
+package com.google.android.gms.internal.fido;
+
+import android.os.Parcel;
+import com.google.android.gms.common.api.Status;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public abstract class zzd extends zzb implements zze {
+    @Override // com.google.android.gms.internal.fido.zzb
+    public final boolean r(int i, Parcel parcel, Parcel parcel2) {
+        if (i == 1) {
+            ClassLoader classLoader = zzc.a;
+            boolean z = parcel.readInt() != 0;
+            zzc.b(parcel);
+            zzb(z);
+        } else {
+            if (i != 2) {
+                return false;
+            }
+            Status status = (Status) zzc.a(parcel, Status.CREATOR);
+            zzc.b(parcel);
+            h(status);
+        }
+        parcel2.writeNoException();
+        return true;
+    }
+
+    public zzd() {
+        super("com.google.android.gms.fido.fido2.api.IBooleanCallback");
+    }
+}

@@ -1,0 +1,68 @@
+package com.mbridge.msdk.playercommon.exoplayer2.source.chunk;
+
+import com.mbridge.msdk.playercommon.exoplayer2.Format;
+import com.mbridge.msdk.playercommon.exoplayer2.upstream.DataSource;
+import com.mbridge.msdk.playercommon.exoplayer2.upstream.DataSpec;
+import com.mbridge.msdk.playercommon.exoplayer2.util.Util;
+import java.io.IOException;
+import java.util.Arrays;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes.dex */
+public abstract class DataChunk extends Chunk {
+    private static final int READ_GRANULARITY = 16384;
+    private byte[] data;
+    private int limit;
+    private volatile boolean loadCanceled;
+
+    @Override // com.mbridge.msdk.playercommon.exoplayer2.upstream.Loader.Loadable
+    public final void cancelLoad() {
+        this.loadCanceled = true;
+    }
+
+    public abstract void consume(byte[] bArr, int i) throws IOException;
+
+    private void maybeExpandData() {
+        byte[] bArr = this.data;
+        if (bArr == null) {
+            this.data = new byte[16384];
+        } else if (bArr.length < this.limit + 16384) {
+            this.data = Arrays.copyOf(bArr, bArr.length + 16384);
+        }
+    }
+
+    @Override // com.mbridge.msdk.playercommon.exoplayer2.source.chunk.Chunk
+    public long bytesLoaded() {
+        return this.limit;
+    }
+
+    public byte[] getDataHolder() {
+        return this.data;
+    }
+
+    @Override // com.mbridge.msdk.playercommon.exoplayer2.upstream.Loader.Loadable
+    public final void load() throws InterruptedException, IOException {
+        try {
+            this.dataSource.open(this.dataSpec);
+            int i = 0;
+            this.limit = 0;
+            while (i != -1 && !this.loadCanceled) {
+                maybeExpandData();
+                i = this.dataSource.read(this.data, this.limit, 16384);
+                if (i != -1) {
+                    this.limit += i;
+                }
+            }
+            if (!this.loadCanceled) {
+                consume(this.data, this.limit);
+            }
+        } finally {
+            Util.closeQuietly(this.dataSource);
+        }
+    }
+
+    public DataChunk(DataSource dataSource, DataSpec dataSpec, int i, Format format, int i2, Object obj, byte[] bArr) {
+        super(dataSource, dataSpec, i, format, i2, obj, -9223372036854775807L, -9223372036854775807L);
+        this.data = bArr;
+    }
+}

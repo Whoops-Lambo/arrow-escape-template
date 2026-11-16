@@ -1,0 +1,22 @@
+package defpackage;
+
+import java.util.concurrent.Executor;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+public final class it4 {
+    public static final it4 d = new it4();
+    public final Runnable a;
+    public final Executor b;
+    public it4 c;
+
+    public it4() {
+        this.a = null;
+        this.b = null;
+    }
+
+    public it4(Runnable runnable, Executor executor) {
+        this.a = runnable;
+        this.b = executor;
+    }
+}

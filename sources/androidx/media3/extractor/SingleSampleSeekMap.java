@@ -1,0 +1,35 @@
+package androidx.media3.extractor;
+
+import androidx.media3.common.util.UnstableApi;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+@UnstableApi
+public final class SingleSampleSeekMap implements SeekMap {
+    private final long durationUs;
+    private final long startPosition;
+
+    @Override // androidx.media3.extractor.SeekMap
+    public boolean isSeekable() {
+        return true;
+    }
+
+    @Override // androidx.media3.extractor.SeekMap
+    public long getDurationUs() {
+        return this.durationUs;
+    }
+
+    @Override // androidx.media3.extractor.SeekMap
+    public SeekMap.SeekPoints getSeekPoints(long j) {
+        return new SeekMap.SeekPoints(new SeekPoint(j, this.startPosition));
+    }
+
+    public SingleSampleSeekMap(long j, long j2) {
+        this.durationUs = j;
+        this.startPosition = j2;
+    }
+
+    public SingleSampleSeekMap(long j) {
+        this(j, 0L);
+    }
+}

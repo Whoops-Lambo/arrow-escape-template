@@ -1,0 +1,61 @@
+package com.fyber.inneractive.sdk.bidder.adm;
+
+import com.fyber.inneractive.sdk.protobuf.d1;
+import com.fyber.inneractive.sdk.protobuf.e1;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public enum s implements d1 {
+    UNITDISPLAYTYPEUNKNOWN(0),
+    BANNER(1),
+    INTERSTITIAL(2),
+    REWARDED(3),
+    MRECT(4),
+    TYPENATIVE(5),
+    UNRECOGNIZED(-1);
+
+    public static final int BANNER_VALUE = 1;
+    public static final int INTERSTITIAL_VALUE = 2;
+    public static final int MRECT_VALUE = 4;
+    public static final int REWARDED_VALUE = 3;
+    public static final int TYPENATIVE_VALUE = 5;
+    public static final int UNITDISPLAYTYPEUNKNOWN_VALUE = 0;
+    private static final e1 internalValueMap = new e1() { // from class: com.fyber.inneractive.sdk.bidder.adm.r
+        @Override // com.fyber.inneractive.sdk.protobuf.e1
+        public final d1 a(int i) {
+            if (i == 0) {
+                return s.UNITDISPLAYTYPEUNKNOWN;
+            }
+            if (i == 1) {
+                return s.BANNER;
+            }
+            if (i == 2) {
+                return s.INTERSTITIAL;
+            }
+            if (i == 3) {
+                return s.REWARDED;
+            }
+            if (i == 4) {
+                return s.MRECT;
+            }
+            if (i != 5) {
+                return null;
+            }
+            return s.TYPENATIVE;
+        }
+    };
+    private final int value;
+
+    @Override // com.fyber.inneractive.sdk.protobuf.d1
+    public final int a() {
+        if (this != UNRECOGNIZED) {
+            return this.value;
+        }
+        defpackage.d.r("Can't get the number of an unknown enum value.");
+        return 0;
+    }
+
+    s(int i) {
+        this.value = i;
+    }
+}

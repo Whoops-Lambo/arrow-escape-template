@@ -1,0 +1,162 @@
+package com.mbridge.msdk.foundation.db.middle;
+
+import android.text.TextUtils;
+import com.mbridge.msdk.foundation.controller.c;
+import com.mbridge.msdk.foundation.entity.g;
+import com.mbridge.msdk.foundation.tools.q0;
+import com.mbridge.msdk.foundation.tools.y0;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public class a {
+    private static String a = "FrequencyDaoMiddle";
+    private static a b = null;
+    private static String c = "FrequencyDaoMiddle";
+    private static JSONArray d = new JSONArray();
+
+    public static a b() {
+        if (b == null) {
+            synchronized (a.class) {
+                try {
+                    if (b == null) {
+                        b = new a();
+                    }
+                } catch (Throwable th) {
+                    throw th;
+                }
+            }
+        }
+        return b;
+    }
+
+    private void d() {
+        try {
+            if (d != null) {
+                y0.b(c.n().d(), c, d.toString());
+            }
+        } catch (Exception e) {
+            q0.b(a, e.getMessage());
+        }
+    }
+
+    public String[] a() {
+        ArrayList arrayList = new ArrayList();
+        if (d != null) {
+            for (int i = 0; i < d.length(); i++) {
+                try {
+                    JSONObject jSONObject = d.getJSONObject(i);
+                    if (jSONObject != null && jSONObject.optInt("fc_a") < jSONObject.optInt("impression_count")) {
+                        arrayList.add(jSONObject.optString("id"));
+                    }
+                } catch (JSONException e) {
+                    q0.b(a, e.getMessage());
+                }
+            }
+        }
+        String[] strArr = new String[arrayList.size()];
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            strArr[i2] = (String) arrayList.get(i2);
+        }
+        return strArr;
+    }
+
+    private a() {
+        c();
+    }
+
+    private void c() {
+        try {
+            String str = (String) y0.a(c.n().d(), c, d.toString());
+            if (!TextUtils.isEmpty(str)) {
+                d = new JSONArray(str);
+            }
+        } catch (Exception e) {
+            q0.b(a, e.getMessage());
+        }
+    }
+
+    public void a(String str) {
+        if (d != null) {
+            JSONArray jSONArray = new JSONArray();
+            for (int i = 0; i < d.length(); i++) {
+                try {
+                    JSONObject jSONObject = d.getJSONObject(i);
+                    if (jSONObject != null) {
+                        if (jSONObject.optString("id", "").equals(str)) {
+                            jSONObject.put("impression_count", jSONObject.optInt("impression_count", 0) + 1);
+                            jSONArray.put(jSONObject);
+                        } else {
+                            jSONArray.put(jSONObject);
+                        }
+                    }
+                } catch (JSONException e) {
+                    q0.b(a, e.getMessage());
+                }
+            }
+            if (jSONArray.length() > 0) {
+                d = jSONArray;
+            }
+            d();
+        }
+    }
+
+    public void a(g gVar) {
+        JSONObject jSONObjectA;
+        if (gVar == null || (jSONObjectA = a(gVar.a(), gVar.c(), gVar.d(), gVar.f(), gVar.e(), gVar.b())) == null) {
+            return;
+        }
+        if (d == null) {
+            d = new JSONArray();
+        }
+        d.put(jSONObjectA);
+        d();
+    }
+
+    public void a(long j) {
+        if (d != null) {
+            JSONArray jSONArray = new JSONArray();
+            for (int i = 0; i < d.length(); i++) {
+                try {
+                    JSONObject jSONObject = d.getJSONObject(i);
+                    if (jSONObject != null && jSONObject.optInt("ts") >= j) {
+                        jSONArray.put(jSONObject);
+                    }
+                } catch (JSONException e) {
+                    q0.b(a, e.getMessage());
+                }
+            }
+            if (jSONArray.length() > 0) {
+                d = jSONArray;
+            }
+        }
+        d();
+    }
+
+    private JSONObject a(String str, int i, int i2, long j, int i3, int i4) {
+        Exception e;
+        JSONObject jSONObject;
+        try {
+            jSONObject = new JSONObject();
+            try {
+                jSONObject.put("id", str);
+                jSONObject.put("fc_a", i);
+                jSONObject.put("fc_b", i2);
+                jSONObject.put("ts", j);
+                jSONObject.put("impression_count", i3);
+                jSONObject.put("click_count", i4);
+                return jSONObject;
+            } catch (Exception e2) {
+                e = e2;
+                q0.b(a, e.getMessage());
+                return jSONObject;
+            }
+        } catch (Exception e3) {
+            e = e3;
+            jSONObject = null;
+        }
+    }
+}

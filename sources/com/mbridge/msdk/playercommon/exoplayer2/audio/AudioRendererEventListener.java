@@ -1,0 +1,112 @@
+package com.mbridge.msdk.playercommon.exoplayer2.audio;
+
+import android.os.Handler;
+import androidx.annotation.Nullable;
+import com.mbridge.msdk.playercommon.exoplayer2.Format;
+import com.mbridge.msdk.playercommon.exoplayer2.decoder.DecoderCounters;
+import com.mbridge.msdk.playercommon.exoplayer2.util.Assertions;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes4.dex */
+public interface AudioRendererEventListener {
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public static final class EventDispatcher {
+
+        @Nullable
+        private final Handler handler;
+
+        @Nullable
+        private final AudioRendererEventListener listener;
+
+        public void audioSessionId(final int i) {
+            if (this.listener != null) {
+                this.handler.post(new Runnable() { // from class: com.mbridge.msdk.playercommon.exoplayer2.audio.AudioRendererEventListener.EventDispatcher.6
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        EventDispatcher.this.listener.onAudioSessionId(i);
+                    }
+                });
+            }
+        }
+
+        public void audioTrackUnderrun(final int i, final long j, final long j2) {
+            if (this.listener != null) {
+                this.handler.post(new Runnable() { // from class: com.mbridge.msdk.playercommon.exoplayer2.audio.AudioRendererEventListener.EventDispatcher.4
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        EventDispatcher.this.listener.onAudioSinkUnderrun(i, j, j2);
+                    }
+                });
+            }
+        }
+
+        public void decoderInitialized(final String str, final long j, final long j2) {
+            if (this.listener != null) {
+                this.handler.post(new Runnable() { // from class: com.mbridge.msdk.playercommon.exoplayer2.audio.AudioRendererEventListener.EventDispatcher.2
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        EventDispatcher.this.listener.onAudioDecoderInitialized(str, j, j2);
+                    }
+                });
+            }
+        }
+
+        public void disabled(final DecoderCounters decoderCounters) {
+            if (this.listener != null) {
+                this.handler.post(new Runnable() { // from class: com.mbridge.msdk.playercommon.exoplayer2.audio.AudioRendererEventListener.EventDispatcher.5
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        decoderCounters.ensureUpdated();
+                        EventDispatcher.this.listener.onAudioDisabled(decoderCounters);
+                    }
+                });
+            }
+        }
+
+        public void enabled(final DecoderCounters decoderCounters) {
+            if (this.listener != null) {
+                this.handler.post(new Runnable() { // from class: com.mbridge.msdk.playercommon.exoplayer2.audio.AudioRendererEventListener.EventDispatcher.1
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        EventDispatcher.this.listener.onAudioEnabled(decoderCounters);
+                    }
+                });
+            }
+        }
+
+        public void inputFormatChanged(final Format format) {
+            if (this.listener != null) {
+                this.handler.post(new Runnable() { // from class: com.mbridge.msdk.playercommon.exoplayer2.audio.AudioRendererEventListener.EventDispatcher.3
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        EventDispatcher.this.listener.onAudioInputFormatChanged(format);
+                    }
+                });
+            }
+        }
+
+        public EventDispatcher(@Nullable Handler handler, @Nullable AudioRendererEventListener audioRendererEventListener) {
+            Handler handler2;
+            if (audioRendererEventListener != null) {
+                handler2 = (Handler) Assertions.checkNotNull(handler);
+            } else {
+                handler2 = null;
+            }
+            this.handler = handler2;
+            this.listener = audioRendererEventListener;
+        }
+    }
+
+    void onAudioDecoderInitialized(String str, long j, long j2);
+
+    void onAudioDisabled(DecoderCounters decoderCounters);
+
+    void onAudioEnabled(DecoderCounters decoderCounters);
+
+    void onAudioInputFormatChanged(Format format);
+
+    void onAudioSessionId(int i);
+
+    void onAudioSinkUnderrun(int i, long j, long j2);
+}

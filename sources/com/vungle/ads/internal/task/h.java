@@ -1,0 +1,10 @@
+package com.vungle.ads.internal.task;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+public final class h implements m {
+    public final int a(e eVar) {
+        eVar.getClass();
+        return Math.min(19, Math.abs(Math.min(0, eVar.e() - 2)) + 10);
+    }
+}

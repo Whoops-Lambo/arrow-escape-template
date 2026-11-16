@@ -1,0 +1,24 @@
+package com.facebook.ads.internal.api;
+
+import androidx.annotation.Keep;
+import androidx.annotation.UiThread;
+import com.facebook.infer.annotation.Nullsafe;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+@Keep
+@UiThread
+@Nullsafe(Nullsafe.Mode.LOCAL)
+public interface AdSizeApi {
+
+    @Deprecated
+    public static final int BANNER_320_50 = 4;
+    public static final int BANNER_HEIGHT_50 = 5;
+    public static final int BANNER_HEIGHT_90 = 6;
+    public static final int INTERSTITIAL = 100;
+    public static final int RECTANGLE_HEIGHT_250 = 7;
+
+    int getHeight();
+
+    int getWidth();
+}

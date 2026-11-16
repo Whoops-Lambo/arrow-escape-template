@@ -1,0 +1,24 @@
+package defpackage;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public final class xk2 extends fy {
+    public yk2 r;
+    public u62 s;
+    public /* synthetic */ Object t;
+    public final /* synthetic */ yk2 u;
+    public int v;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xk2(yk2 yk2Var, fy fyVar) {
+        super(fyVar);
+        this.u = yk2Var;
+    }
+
+    @Override // defpackage.ph
+    public final Object invokeSuspend(Object obj) {
+        this.t = obj;
+        this.v |= Integer.MIN_VALUE;
+        return this.u.a(this);
+    }
+}

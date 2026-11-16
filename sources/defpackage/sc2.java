@@ -1,0 +1,27 @@
+package defpackage;
+
+import com.usercentrics.sdk.core.settings.SettingsInitializationParameters;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+public final class sc2 extends fy {
+    public tc2 r;
+    public SettingsInitializationParameters s;
+    public /* synthetic */ Object t;
+    public final /* synthetic */ tc2 u;
+    public int v;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sc2(tc2 tc2Var, fy fyVar) {
+        super(fyVar);
+        this.u = tc2Var;
+    }
+
+    @Override // defpackage.ph
+    public final Object invokeSuspend(Object obj) {
+        this.t = obj;
+        this.v |= Integer.MIN_VALUE;
+        Object objA = this.u.a(null, this);
+        return objA == dz.a ? objA : new k52(objA);
+    }
+}

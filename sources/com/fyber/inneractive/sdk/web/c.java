@@ -1,0 +1,19 @@
+package com.fyber.inneractive.sdk.web;
+
+import com.fyber.inneractive.sdk.util.IAlog;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes10.dex */
+public final class c implements Runnable {
+    public final /* synthetic */ i a;
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        IAlog.e("Removing clicked state after timeout", new Object[0]);
+        this.a.i();
+    }
+
+    public c(i1 i1Var) {
+        this.a = i1Var;
+    }
+}

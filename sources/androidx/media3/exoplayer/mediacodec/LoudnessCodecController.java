@@ -1,0 +1,89 @@
+package androidx.media3.exoplayer.mediacodec;
+
+import android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener;
+import android.media.MediaCodec;
+import android.os.Bundle;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.UnstableApi;
+import defpackage.dr0;
+import defpackage.gc0;
+import java.util.HashSet;
+import java.util.Iterator;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes.dex */
+@RequiresApi
+@UnstableApi
+public final class LoudnessCodecController {
+
+    @Nullable
+    private android.media.LoudnessCodecController loudnessCodecController;
+    private final HashSet<MediaCodec> mediaCodecs;
+    private final LoudnessParameterUpdateListener updateListener;
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public interface LoudnessParameterUpdateListener {
+        public static final LoudnessParameterUpdateListener DEFAULT = new dr0(25);
+
+        /* JADX INFO: Access modifiers changed from: private */
+        static /* synthetic */ Bundle lambda$static$0(Bundle bundle) {
+            return bundle;
+        }
+
+        Bundle onLoudnessParameterUpdate(Bundle bundle);
+    }
+
+    public void addMediaCodec(MediaCodec mediaCodec) {
+        android.media.LoudnessCodecController loudnessCodecController = this.loudnessCodecController;
+        if (loudnessCodecController == null || loudnessCodecController.addMediaCodec(mediaCodec)) {
+            Assertions.checkState(this.mediaCodecs.add(mediaCodec));
+        }
+    }
+
+    public void release() {
+        this.mediaCodecs.clear();
+        android.media.LoudnessCodecController loudnessCodecController = this.loudnessCodecController;
+        if (loudnessCodecController != null) {
+            loudnessCodecController.close();
+        }
+    }
+
+    public void removeMediaCodec(MediaCodec mediaCodec) {
+        android.media.LoudnessCodecController loudnessCodecController;
+        if (!this.mediaCodecs.remove(mediaCodec) || (loudnessCodecController = this.loudnessCodecController) == null) {
+            return;
+        }
+        loudnessCodecController.removeMediaCodec(mediaCodec);
+    }
+
+    public void setAudioSessionId(int i) {
+        android.media.LoudnessCodecController loudnessCodecController = this.loudnessCodecController;
+        if (loudnessCodecController != null) {
+            loudnessCodecController.close();
+            this.loudnessCodecController = null;
+        }
+        android.media.LoudnessCodecController loudnessCodecControllerCreate = android.media.LoudnessCodecController.create(i, gc0.a, new LoudnessCodecController$OnLoudnessCodecUpdateListener() { // from class: androidx.media3.exoplayer.mediacodec.LoudnessCodecController.1
+            public Bundle onLoudnessCodecUpdate(MediaCodec mediaCodec, Bundle bundle) {
+                return LoudnessCodecController.this.updateListener.onLoudnessParameterUpdate(bundle);
+            }
+        });
+        this.loudnessCodecController = loudnessCodecControllerCreate;
+        Iterator<MediaCodec> it = this.mediaCodecs.iterator();
+        while (it.hasNext()) {
+            if (!loudnessCodecControllerCreate.addMediaCodec(it.next())) {
+                it.remove();
+            }
+        }
+    }
+
+    public LoudnessCodecController(LoudnessParameterUpdateListener loudnessParameterUpdateListener) {
+        this.mediaCodecs = new HashSet<>();
+        this.updateListener = loudnessParameterUpdateListener;
+    }
+
+    public LoudnessCodecController() {
+        this(LoudnessParameterUpdateListener.DEFAULT);
+    }
+}

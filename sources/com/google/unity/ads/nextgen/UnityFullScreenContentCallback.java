@@ -1,0 +1,17 @@
+package com.google.unity.ads.nextgen;
+
+import com.google.android.libraries.ads.mobile.sdk.common.FullScreenContentError;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public interface UnityFullScreenContentCallback {
+    void onAdClicked();
+
+    void onAdDismissedFullScreenContent();
+
+    void onAdFailedToShowFullScreenContent(FullScreenContentError fullScreenContentError);
+
+    void onAdImpression();
+
+    void onAdShowedFullScreenContent();
+}

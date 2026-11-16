@@ -1,0 +1,12 @@
+package com.google.android.gms.nearby.messages.internal;
+
+import com.google.android.gms.common.api.internal.RemoteCall;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public final /* synthetic */ class zzam implements RemoteCall {
+    @Override // com.google.android.gms.common.api.internal.RemoteCall
+    public final void accept(Object obj, Object obj2) {
+        throw null;
+    }
+}

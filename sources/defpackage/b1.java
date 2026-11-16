@@ -1,0 +1,13 @@
+package defpackage;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes.dex */
+public final class b1 {
+    public static final b1 c = new b1();
+    public volatile Thread a;
+    public volatile b1 b;
+
+    public b1() {
+        c1.f.t(this, Thread.currentThread());
+    }
+}

@@ -1,0 +1,12 @@
+package com.fyber.inneractive.sdk.flow;
+
+import com.fyber.inneractive.sdk.external.InneractiveAdSpot;
+import com.fyber.inneractive.sdk.external.InneractiveErrorCode;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public interface g0 {
+    void onAdRefreshFailed(InneractiveAdSpot inneractiveAdSpot, InneractiveErrorCode inneractiveErrorCode);
+
+    void onAdRefreshed(InneractiveAdSpot inneractiveAdSpot);
+}

@@ -1,0 +1,65 @@
+package com.iab.omid.library.vungle.processor;
+
+import android.view.View;
+import androidx.annotation.NonNull;
+import com.iab.omid.library.vungle.utils.e;
+import com.iab.omid.library.vungle.utils.h;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.IdentityHashMap;
+import java.util.Iterator;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public class c implements a {
+    private final a a;
+
+    @NonNull
+    public ArrayList<View> a() {
+        View rootView;
+        ArrayList<View> arrayList = new ArrayList<>();
+        com.iab.omid.library.vungle.internal.c cVarC = com.iab.omid.library.vungle.internal.c.c();
+        if (cVarC != null) {
+            Collection<com.iab.omid.library.vungle.adsession.a> collectionA = cVarC.a();
+            IdentityHashMap identityHashMap = new IdentityHashMap((collectionA.size() * 2) + 3);
+            Iterator<com.iab.omid.library.vungle.adsession.a> it = collectionA.iterator();
+            while (it.hasNext()) {
+                View viewE = it.next().e();
+                if (viewE != null && h.g(viewE) && (rootView = viewE.getRootView()) != null && !identityHashMap.containsKey(rootView)) {
+                    identityHashMap.put(rootView, rootView);
+                    float fD = h.d(rootView);
+                    int size = arrayList.size();
+                    while (size > 0 && h.d(arrayList.get(size - 1)) > fD) {
+                        size--;
+                    }
+                    arrayList.add(size, rootView);
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    public c(a aVar) {
+        this.a = aVar;
+    }
+
+    @Override // com.iab.omid.library.vungle.processor.a
+    public JSONObject a(View view) {
+        JSONObject jSONObjectA = com.iab.omid.library.vungle.utils.c.a(0, 0, 0, 0);
+        com.iab.omid.library.vungle.utils.c.a(jSONObjectA, e.a());
+        return jSONObjectA;
+    }
+
+    @Override // com.iab.omid.library.vungle.processor.a
+    public void a(View view, JSONObject jSONObject, a.InterfaceC0352a interfaceC0352a, boolean z, boolean z2) {
+        ArrayList<View> arrayListA = a();
+        int size = arrayListA.size();
+        int i = 0;
+        while (i < size) {
+            View view2 = arrayListA.get(i);
+            i++;
+            interfaceC0352a.a(view2, this.a, jSONObject, z2);
+        }
+    }
+}

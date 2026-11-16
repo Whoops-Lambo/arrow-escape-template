@@ -1,0 +1,11 @@
+package defpackage;
+
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes6.dex */
+public abstract class g12 {
+
+    @NotNull
+    public static final f12 Companion = new f12();
+}

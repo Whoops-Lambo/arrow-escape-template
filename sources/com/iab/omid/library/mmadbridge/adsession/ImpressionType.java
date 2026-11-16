@@ -1,0 +1,26 @@
+package com.iab.omid.library.mmadbridge.adsession;
+
+import com.ironsource.C4664b4;
+
+/* JADX INFO: loaded from: classes7.dex */
+public enum ImpressionType {
+    DEFINED_BY_JAVASCRIPT("definedByJavaScript"),
+    UNSPECIFIED("unspecified"),
+    LOADED(C4664b4.i.r),
+    BEGIN_TO_RENDER("beginToRender"),
+    ONE_PIXEL("onePixel"),
+    VIEWABLE("viewable"),
+    AUDIBLE("audible"),
+    OTHER("other");
+
+    private final String impressionType;
+
+    @Override // java.lang.Enum
+    public String toString() {
+        return this.impressionType;
+    }
+
+    ImpressionType(String str) {
+        this.impressionType = str;
+    }
+}

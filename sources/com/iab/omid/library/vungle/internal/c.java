@@ -1,0 +1,53 @@
+package com.iab.omid.library.vungle.internal;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+public class c {
+    private static c c = new c();
+    private final ArrayList<com.iab.omid.library.vungle.adsession.a> a = new ArrayList<>();
+    private final ArrayList<com.iab.omid.library.vungle.adsession.a> b = new ArrayList<>();
+
+    public Collection<com.iab.omid.library.vungle.adsession.a> a() {
+        return Collections.unmodifiableCollection(this.b);
+    }
+
+    public boolean d() {
+        return this.b.size() > 0;
+    }
+
+    private c() {
+    }
+
+    public void b(com.iab.omid.library.vungle.adsession.a aVar) {
+        boolean zD = d();
+        this.a.remove(aVar);
+        this.b.remove(aVar);
+        if (zD && !d()) {
+            i.c().f();
+        }
+    }
+
+    public void c(com.iab.omid.library.vungle.adsession.a aVar) {
+        boolean zD = d();
+        this.b.add(aVar);
+        if (!zD) {
+            i.c().e();
+        }
+    }
+
+    public void a(com.iab.omid.library.vungle.adsession.a aVar) {
+        this.a.add(aVar);
+    }
+
+    public static c c() {
+        return c;
+    }
+
+    public Collection<com.iab.omid.library.vungle.adsession.a> b() {
+        return Collections.unmodifiableCollection(this.a);
+    }
+}

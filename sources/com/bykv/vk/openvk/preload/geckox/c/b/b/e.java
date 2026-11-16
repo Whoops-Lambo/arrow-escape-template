@@ -1,0 +1,26 @@
+package com.bykv.vk.openvk.preload.geckox.c.b.b;
+
+import android.util.Pair;
+import com.bykv.vk.openvk.preload.geckox.logger.GeckoLogger;
+import com.bykv.vk.openvk.preload.geckox.model.UpdatePackage;
+import com.facebook.appevents.p;
+import java.io.File;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes8.dex */
+public class e extends com.bykv.vk.openvk.preload.a.d<Pair<File, UpdatePackage>, Pair<String, Long>> {
+    @Override // com.bykv.vk.openvk.preload.a.d
+    public final /* synthetic */ Object a(com.bykv.vk.openvk.preload.a.b<Pair<String, Long>> bVar, Pair<File, UpdatePackage> pair) throws Throwable {
+        Pair<File, UpdatePackage> pair2 = pair;
+        GeckoLogger.d("gecko-debug-tag", "start active merged zip file, channel:", ((UpdatePackage) pair2.second).getChannel());
+        File parentFile = ((File) pair2.first).getParentFile();
+        long version = ((UpdatePackage) pair2.second).getVersion();
+        File file = new File(parentFile.getParentFile(), String.valueOf(version));
+        com.bykv.vk.openvk.preload.geckox.utils.b.a(file);
+        if (parentFile.renameTo(file)) {
+            return bVar.a(new Pair<>(((UpdatePackage) pair2.second).getChannel(), Long.valueOf(version)));
+        }
+        p.b(parentFile.getAbsolutePath(), "active merged zip file failed:");
+        return null;
+    }
+}

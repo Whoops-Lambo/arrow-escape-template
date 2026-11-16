@@ -1,0 +1,34 @@
+package com.ironsource;
+
+import com.safedk.android.internal.partials.IronSourceNetworkBridge;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes4.dex */
+public final class P3 implements Y5 {
+
+    @NotNull
+    private final JSONObject a;
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public static final class a {
+
+        @NotNull
+        public static final a a = new a();
+        public static final boolean b = false;
+
+        private a() {
+        }
+    }
+
+    @Override // com.ironsource.Y5
+    public boolean b() {
+        return this.a.optBoolean("clickCheck", false);
+    }
+
+    public P3(@Nullable JSONObject jSONObject) {
+        this.a = jSONObject == null ? IronSourceNetworkBridge.jsonObjectInit() : jSONObject;
+    }
+}

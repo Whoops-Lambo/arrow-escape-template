@@ -1,0 +1,35 @@
+package androidx.transition;
+
+import android.os.Build;
+import android.view.View;
+import androidx.annotation.DoNotInline;
+import androidx.annotation.RequiresApi;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+@RequiresApi
+class ViewUtilsApi23 extends ViewUtilsApi22 {
+    public static boolean h = true;
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    @RequiresApi
+    public static class Api29Impl {
+        @DoNotInline
+        public static void a(View view, int i) {
+            view.setTransitionVisibility(i);
+        }
+    }
+
+    @Override // androidx.transition.ViewUtilsApi19
+    public void c(View view, int i) {
+        if (Build.VERSION.SDK_INT == 28) {
+            super.c(view, i);
+        } else if (h) {
+            try {
+                Api29Impl.a(view, i);
+            } catch (NoSuchMethodError unused) {
+                h = false;
+            }
+        }
+    }
+}

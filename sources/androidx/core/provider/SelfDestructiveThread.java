@@ -1,0 +1,93 @@
+package androidx.core.provider;
+
+import android.os.Handler;
+import android.os.Message;
+import androidx.annotation.RestrictTo;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+@RestrictTo
+@Deprecated
+public class SelfDestructiveThread {
+
+    /* JADX INFO: renamed from: androidx.core.provider.SelfDestructiveThread$1, reason: invalid class name */
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public class AnonymousClass1 implements Handler.Callback {
+        @Override // android.os.Handler.Callback
+        public final boolean handleMessage(Message message) {
+            int i = message.what;
+            if (i == 0) {
+                throw null;
+            }
+            if (i != 1) {
+                return true;
+            }
+            throw null;
+        }
+    }
+
+    /* JADX INFO: renamed from: androidx.core.provider.SelfDestructiveThread$2, reason: invalid class name */
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    /* JADX INFO: loaded from: classes9.dex */
+    class AnonymousClass2 implements Runnable {
+
+        /* JADX INFO: renamed from: androidx.core.provider.SelfDestructiveThread$2$1, reason: invalid class name */
+        /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+        /* JADX INFO: loaded from: classes5.dex */
+        class AnonymousClass1 implements Runnable {
+            @Override // java.lang.Runnable
+            public final void run() {
+                throw null;
+            }
+        }
+
+        /* JADX WARN: Code restructure failed: missing block: B:7:?, code lost:
+        
+            throw null;
+         */
+        @Override // java.lang.Runnable
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct code enable 'Show inconsistent code' option in preferences
+        */
+        public final void run() {
+            /*
+                r0 = this;
+                r0 = 0
+                throw r0     // Catch: java.lang.Exception -> L2
+            L2:
+                throw r0
+            */
+            throw new UnsupportedOperationException("Method not decompiled: androidx.core.provider.SelfDestructiveThread.AnonymousClass2.run():void");
+        }
+    }
+
+    /* JADX INFO: renamed from: androidx.core.provider.SelfDestructiveThread$3, reason: invalid class name */
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    /* JADX INFO: loaded from: classes9.dex */
+    class AnonymousClass3 implements Runnable {
+        /* JADX WARN: Code restructure failed: missing block: B:7:?, code lost:
+        
+            throw null;
+         */
+        @Override // java.lang.Runnable
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct code enable 'Show inconsistent code' option in preferences
+        */
+        public final void run() {
+            /*
+                r0 = this;
+                r0 = 0
+                throw r0     // Catch: java.lang.Exception -> L2
+            L2:
+                throw r0
+            */
+            throw new UnsupportedOperationException("Method not decompiled: androidx.core.provider.SelfDestructiveThread.AnonymousClass3.run():void");
+        }
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public interface ReplyCallback<T> {
+    }
+}

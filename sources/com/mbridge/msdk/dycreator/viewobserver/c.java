@@ -1,0 +1,27 @@
+package com.mbridge.msdk.dycreator.viewobserver;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public class c extends a {
+    public void a(Object obj) {
+        b bVar;
+        ConcurrentHashMap<Integer, Object> concurrentHashMap = this.b;
+        if (concurrentHashMap == null || concurrentHashMap.size() <= 0) {
+            return;
+        }
+        for (Map.Entry<Integer, Object> entry : this.b.entrySet()) {
+            if (entry != null) {
+                try {
+                    if (entry.getValue() != null && (bVar = (b) entry.getValue()) != null) {
+                        bVar.a(obj);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}

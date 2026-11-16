@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-cache-path
+        name="adsurge_apk_ext"
+        path="com_adsurge_adn_download/apk"/>
+    <cache-path
+        name="adsurge_apk_int"
+        path="com_adsurge_adn_download/apk"/>
+</paths>

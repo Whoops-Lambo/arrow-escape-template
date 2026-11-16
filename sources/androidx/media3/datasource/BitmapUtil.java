@@ -1,0 +1,61 @@
+package androidx.media3.datasource;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import androidx.annotation.Nullable;
+import androidx.exifinterface.media.ExifInterface;
+import androidx.media3.common.ParserException;
+import androidx.media3.common.util.UnstableApi;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+@UnstableApi
+public final class BitmapUtil {
+    public static Bitmap decode(byte[] bArr, int i, @Nullable BitmapFactory.Options options, int i2) throws IOException {
+        if (i2 != -1) {
+            if (options == null) {
+                options = new BitmapFactory.Options();
+            }
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeByteArray(bArr, 0, i, options);
+            options.inJustDecodeBounds = false;
+            options.inSampleSize = 1;
+            for (int iMax = Math.max(options.outWidth, options.outHeight); iMax > i2; iMax /= 2) {
+                options.inSampleSize *= 2;
+            }
+        }
+        Bitmap bitmapDecodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, i, options);
+        if (options != null) {
+            options.inSampleSize = 1;
+        }
+        if (bitmapDecodeByteArray == null) {
+            throw ParserException.createForMalformedContainer("Could not decode image data", new IllegalStateException());
+        }
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArr);
+        try {
+            ExifInterface exifInterface = new ExifInterface(byteArrayInputStream);
+            byteArrayInputStream.close();
+            int iL = exifInterface.l();
+            if (iL == 0) {
+                return bitmapDecodeByteArray;
+            }
+            Matrix matrix = new Matrix();
+            matrix.postRotate(iL);
+            return Bitmap.createBitmap(bitmapDecodeByteArray, 0, 0, bitmapDecodeByteArray.getWidth(), bitmapDecodeByteArray.getHeight(), matrix, false);
+        } catch (Throwable th) {
+            try {
+                byteArrayInputStream.close();
+                throw th;
+            } catch (Throwable th2) {
+                th.addSuppressed(th2);
+                throw th;
+            }
+        }
+    }
+
+    private BitmapUtil() {
+    }
+}

@@ -1,0 +1,17 @@
+package androidx.startup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RestrictTo;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes4.dex */
+@RestrictTo
+public final class StartupException extends RuntimeException {
+    public StartupException(@NonNull String str) {
+        super(str);
+    }
+
+    public StartupException(@NonNull Throwable th) {
+        super(th);
+    }
+}

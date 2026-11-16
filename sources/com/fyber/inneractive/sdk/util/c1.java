@@ -1,0 +1,21 @@
+package com.fyber.inneractive.sdk.util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class c1 {
+    public static void a(JSONObject jSONObject, String str, Object obj) {
+        if (obj != null) {
+            try {
+                if (obj instanceof b1) {
+                    jSONObject.putOpt(str, ((b1) obj).a());
+                } else {
+                    jSONObject.putOpt(str, obj);
+                }
+            } catch (JSONException unused) {
+            }
+        }
+    }
+}

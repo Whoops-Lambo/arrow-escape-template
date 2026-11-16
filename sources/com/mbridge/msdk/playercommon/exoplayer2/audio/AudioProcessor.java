@@ -1,0 +1,43 @@
+package com.mbridge.msdk.playercommon.exoplayer2.audio;
+
+import defpackage.jc1;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+public interface AudioProcessor {
+    public static final ByteBuffer EMPTY_BUFFER = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public static final class UnhandledFormatException extends Exception {
+        /* JADX WARN: Illegal instructions before constructor call */
+        public UnhandledFormatException(int i, int i2, int i3) {
+            StringBuilder sbT = jc1.t("Unhandled format: ", i, " Hz, ", i2, " channels in encoding ");
+            sbT.append(i3);
+            super(sbT.toString());
+        }
+    }
+
+    boolean configure(int i, int i2, int i3) throws UnhandledFormatException;
+
+    void flush();
+
+    ByteBuffer getOutput();
+
+    int getOutputChannelCount();
+
+    int getOutputEncoding();
+
+    int getOutputSampleRateHz();
+
+    boolean isActive();
+
+    boolean isEnded();
+
+    void queueEndOfStream();
+
+    void queueInput(ByteBuffer byteBuffer);
+
+    void reset();
+}

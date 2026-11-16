@@ -1,0 +1,33 @@
+package androidx.compose.foundation.text;
+
+import androidx.compose.ui.input.key.Key_androidKt;
+import com.vungle.ads.internal.protos.Sdk;
+import kotlin.Metadata;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\bÀ\u0002\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Landroidx/compose/foundation/text/MappedKeys;", "", "foundation_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+public final class MappedKeys {
+    public static final long a = Key_androidKt.a(29);
+    public static final long b = Key_androidKt.a(31);
+    public static final long c = Key_androidKt.a(36);
+    public static final long d = Key_androidKt.a(50);
+    public static final long e = Key_androidKt.a(52);
+    public static final long f = Key_androidKt.a(54);
+    public static final long g = Key_androidKt.a(73);
+    public static final long h = Key_androidKt.a(21);
+    public static final long i = Key_androidKt.a(22);
+    public static final long j = Key_androidKt.a(19);
+    public static final long k = Key_androidKt.a(20);
+    public static final long l = Key_androidKt.a(92);
+    public static final long m = Key_androidKt.a(93);
+    public static final long n = Key_androidKt.a(Sdk.SDKError.Reason.INVALID_ADS_ENDPOINT_VALUE);
+    public static final long o = Key_androidKt.a(Sdk.SDKError.Reason.INVALID_RI_ENDPOINT_VALUE);
+    public static final long p = Key_androidKt.a(Sdk.SDKError.Reason.INVALID_LOG_ERROR_ENDPOINT_VALUE);
+    public static final long q = Key_androidKt.a(66);
+    public static final long r = Key_androidKt.a(67);
+    public static final long s = Key_androidKt.a(112);
+    public static final long t = Key_androidKt.a(279);
+    public static final long u = Key_androidKt.a(277);
+    public static final long v = Key_androidKt.a(61);
+}

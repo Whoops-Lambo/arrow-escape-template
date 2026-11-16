@@ -1,0 +1,89 @@
+package com.mbridge.msdk.config.manager.callback;
+
+import com.mbridge.msdk.out.MBridgeIds;
+import com.mbridge.msdk.out.RewardInfo;
+import java.util.HashMap;
+import java.util.Map;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes5.dex */
+public final class b {
+    public static RewardInfo e(Map<String, Object> map) {
+        if (map == null) {
+            return null;
+        }
+        Object obj = map.get("reward_info");
+        if (obj instanceof RewardInfo) {
+            return (RewardInfo) obj;
+        }
+        return null;
+    }
+
+    public static String c(Map<String, Object> map, String str) {
+        Object obj;
+        return (map == null || str == null || (obj = map.get(str)) == null) ? "" : String.valueOf(obj);
+    }
+
+    public static Map<String, Object> d(Map<String, Object> map) {
+        if (map == null) {
+            return new HashMap();
+        }
+        Object obj = map.get("result");
+        return obj instanceof Map ? (Map) obj : new HashMap();
+    }
+
+    public static int a(Map<String, Object> map, String str) {
+        Map<String, Object> mapD = d(map);
+        if (str == null) {
+            return 0;
+        }
+        Object obj = mapD.get(str);
+        if (obj instanceof Number) {
+            return ((Number) obj).intValue();
+        }
+        if (obj != null) {
+            try {
+                return Integer.parseInt(String.valueOf(obj));
+            } catch (NumberFormatException unused) {
+            }
+        }
+        return 0;
+    }
+
+    public static long b(Map<String, Object> map, String str) {
+        Map<String, Object> mapD = d(map);
+        if (str == null) {
+            return 0L;
+        }
+        Object obj = mapD.get(str);
+        if (obj instanceof Number) {
+            return ((Number) obj).longValue();
+        }
+        if (obj != null) {
+            try {
+                return Long.parseLong(String.valueOf(obj));
+            } catch (NumberFormatException unused) {
+            }
+        }
+        return 0L;
+    }
+
+    public static MBridgeIds c(Map<String, Object> map) {
+        if (map == null) {
+            return null;
+        }
+        Object obj = map.get("ids");
+        if (obj instanceof MBridgeIds) {
+            return (MBridgeIds) obj;
+        }
+        return null;
+    }
+
+    public static String a(Map<String, Object> map) {
+        return c(map, "action");
+    }
+
+    public static String b(Map<String, Object> map) {
+        return c(map, "error_msg");
+    }
+}

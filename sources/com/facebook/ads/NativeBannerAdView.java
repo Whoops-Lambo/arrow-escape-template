@@ -1,0 +1,71 @@
+package com.facebook.ads;
+
+import android.content.Context;
+import android.view.View;
+import androidx.annotation.Keep;
+import androidx.annotation.Nullable;
+import com.facebook.ads.internal.api.NativeAdViewTypeApi;
+import com.facebook.ads.internal.dynamicloading.DynamicLoaderFactory;
+import com.facebook.ads.internal.util.common.Preconditions;
+import com.facebook.infer.annotation.Nullsafe;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+@Keep
+@Nullsafe(Nullsafe.Mode.LOCAL)
+public class NativeBannerAdView {
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    @Keep
+    public enum Type {
+        HEIGHT_50(4),
+        HEIGHT_100(0),
+        HEIGHT_120(1);
+
+        private final int mEnumCode;
+
+        @Nullable
+        private NativeAdViewTypeApi mNativeAdViewTypeApi;
+
+        private NativeAdViewTypeApi getNativeAdViewTypeApi() {
+            if (this.mNativeAdViewTypeApi == null) {
+                this.mNativeAdViewTypeApi = DynamicLoaderFactory.makeLoaderUnsafe().createNativeAdViewTypeApi(this.mEnumCode);
+            }
+            return this.mNativeAdViewTypeApi;
+        }
+
+        public int getEnumCode() {
+            return this.mEnumCode;
+        }
+
+        Type(int i) {
+            this.mEnumCode = i;
+        }
+
+        public int getHeight() {
+            return getNativeAdViewTypeApi().getHeight();
+        }
+
+        public int getValue() {
+            return getNativeAdViewTypeApi().getValue();
+        }
+
+        public int getWidth() {
+            return getNativeAdViewTypeApi().getWidth();
+        }
+    }
+
+    public static View render(Context context, NativeBannerAd nativeBannerAd, Type type) {
+        Preconditions.checkNotNull(context, "context must be not null");
+        Preconditions.checkNotNull(nativeBannerAd, "nativeBannerAd must be not null");
+        Preconditions.checkNotNull(type, "type must be not null");
+        return DynamicLoaderFactory.makeLoader(context).createNativeBannerAdViewApi().render(context, nativeBannerAd, type, null);
+    }
+
+    public static View render(Context context, NativeBannerAd nativeBannerAd, Type type, NativeAdViewAttributes nativeAdViewAttributes) {
+        Preconditions.checkNotNull(context, "context must be not null");
+        Preconditions.checkNotNull(nativeBannerAd, "nativeBannerAd must be not null");
+        Preconditions.checkNotNull(type, "type must be not null");
+        return DynamicLoaderFactory.makeLoader(context).createNativeBannerAdViewApi().render(context, nativeBannerAd, type, nativeAdViewAttributes);
+    }
+}

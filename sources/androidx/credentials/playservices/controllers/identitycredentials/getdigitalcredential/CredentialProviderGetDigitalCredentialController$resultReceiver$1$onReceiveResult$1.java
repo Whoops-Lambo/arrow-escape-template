@@ -1,0 +1,21 @@
+package androidx.credentials.playservices.controllers.identitycredentials.getdigitalcredential;
+
+import androidx.credentials.exceptions.GetCredentialException;
+import androidx.credentials.playservices.controllers.CredentialProviderBaseController;
+import defpackage.ks0;
+import defpackage.zr0;
+import kotlin.Metadata;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes6.dex */
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+public final /* synthetic */ class CredentialProviderGetDigitalCredentialController$resultReceiver$1$onReceiveResult$1 extends ks0 implements zr0 {
+    public CredentialProviderGetDigitalCredentialController$resultReceiver$1$onReceiveResult$1(Object obj) {
+        super(2, obj, CredentialProviderBaseController.Companion.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0);
+    }
+
+    @Override // defpackage.zr0
+    public final GetCredentialException invoke(String str, String str2) {
+        return ((CredentialProviderBaseController.Companion) this.receiver).getCredentialExceptionTypeToException$credentials_play_services_auth(str, str2);
+    }
+}

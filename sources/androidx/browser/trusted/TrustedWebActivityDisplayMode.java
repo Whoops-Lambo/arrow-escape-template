@@ -1,0 +1,22 @@
+package androidx.browser.trusted;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes6.dex */
+public interface TrustedWebActivityDisplayMode {
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public static class BrowserMode implements TrustedWebActivityDisplayMode {
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public static class DefaultMode implements TrustedWebActivityDisplayMode {
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public static class ImmersiveMode implements TrustedWebActivityDisplayMode {
+    }
+
+    /* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+    public static class MinimalUiMode implements TrustedWebActivityDisplayMode {
+    }
+}

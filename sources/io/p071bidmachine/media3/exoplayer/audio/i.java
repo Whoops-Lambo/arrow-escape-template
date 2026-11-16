@@ -1,0 +1,12 @@
+package io.p071bidmachine.media3.exoplayer.audio;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public final class i {
+    public boolean a;
+    public int b;
+    public int c;
+    public boolean d;
+    public int e;
+    public int f;
+}

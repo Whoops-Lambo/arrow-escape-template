@@ -1,0 +1,103 @@
+package com.adsurge.adn.p007b;
+
+import defpackage.nj;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+public class c {
+    public String a = "";
+    public String b = "";
+    public String c = "";
+    public String d = "";
+    public String e = "";
+    public String f = "";
+    public String g = "";
+    public String h = "";
+    public String i = "";
+    public String j = "";
+    public String k = "";
+    public String l = "";
+    public String m = "";
+    public String n = "";
+    public String o = "";
+    public String p = "";
+    public String q = "";
+    public String r = "";
+    public String s = "";
+    public String t = "";
+    public String u = "";
+    public String v = "";
+    public String w = "";
+    public String x = "";
+    public String y = "";
+    public String z = "";
+    public String A = "";
+    public String B = "";
+    public String C = "";
+    public String D = "";
+    public String E = "";
+    public String F = "";
+    public String G = "";
+    public String H = "";
+    public String I = "";
+    public String J = "";
+    public String K = "";
+    public String L = "";
+    public String M = "";
+    public String N = "";
+    public String O = "";
+    public String P = "";
+    public String Q = "";
+    public String R = "";
+    public String S = "";
+    public String T = "";
+    public String U = "";
+    public String V = "";
+    public String W = "";
+    public String X = "";
+    public String Y = "";
+    public String Z = "";
+    public String a0 = "";
+    public String b0 = "";
+    public String c0 = "";
+    public String d0 = "";
+    public String e0 = "";
+    public String f0 = "";
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder("AntiSpamEntity{g='");
+        sb.append(this.a);
+        sb.append("', sc='");
+        sb.append(this.b);
+        sb.append("', ec='");
+        sb.append(this.c);
+        sb.append("', aa='");
+        sb.append(this.d);
+        sb.append("', ab='");
+        sb.append(this.e);
+        sb.append("', ba='");
+        sb.append(this.f);
+        sb.append("', bb='");
+        sb.append(this.g);
+        sb.append("', da='");
+        sb.append(this.n);
+        sb.append("', db='");
+        sb.append(this.o);
+        sb.append("', dx='");
+        sb.append(this.p);
+        sb.append("', dy='");
+        sb.append(this.q);
+        sb.append("', sz='");
+        sb.append(this.r);
+        sb.append("', dp='");
+        sb.append(this.x);
+        sb.append("', rwd='");
+        sb.append(this.R);
+        sb.append("', sld='");
+        sb.append(this.T);
+        sb.append("', vif='");
+        sb.append(this.X);
+        sb.append("', cr='");
+        return nj.q(sb, this.w, "'}");
+    }
+}

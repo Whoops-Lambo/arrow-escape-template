@@ -1,0 +1,25 @@
+package androidx.privacysandbox.ads.adservices.topics;
+
+import android.annotation.SuppressLint;
+import androidx.annotation.RequiresExtension;
+import androidx.annotation.RestrictTo;
+import kotlin.Metadata;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes6.dex */
+@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerApi31Ext11Impl;", "Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;", "ads-adservices_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@SuppressLint({"NewApi", "ClassVerificationFailure"})
+@RequiresExtension
+@RestrictTo
+public final class TopicsManagerApi31Ext11Impl extends TopicsManagerImplCommon {
+    @Override // androidx.privacysandbox.ads.adservices.topics.TopicsManagerImplCommon
+    public final GetTopicsResponse c() {
+        throw null;
+    }
+
+    @Override // androidx.privacysandbox.ads.adservices.topics.TopicsManagerImplCommon
+    public final void b(GetTopicsRequest getTopicsRequest) {
+        getTopicsRequest.getClass();
+        throw new RuntimeException("Stub!");
+    }
+}

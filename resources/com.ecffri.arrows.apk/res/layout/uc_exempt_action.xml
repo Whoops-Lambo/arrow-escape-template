@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.usercentrics.sdk.ui.components.UCTextView
+        android:textStyle="bold"
+        android:id="@+id/ucExemptActionTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ucCardVerticalMargin"
+        android:layout_marginStart="@dimen/ucCardVerticalMargin"
+        app:layout_constraintEnd_toStartOf="@+id/ucExemptActionButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.usercentrics.sdk.ui.components.UCTextView
+        android:textSize="@dimen/ucFontSmallSize"
+        android:id="@+id/ucExemptActionDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="@dimen/ucCardVerticalMargin"
+        android:layout_marginStart="@dimen/ucCardVerticalMargin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ucExemptActionButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ucExemptActionTitle"/>
+    <com.usercentrics.sdk.ui.components.UCButton
+        android:id="@+id/ucExemptActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ucCardHorizontalMargin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</merge>

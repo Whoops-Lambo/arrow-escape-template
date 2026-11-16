@@ -1,0 +1,28 @@
+package com.fyber.inneractive.sdk.player.exoplayer2.source;
+
+import com.fyber.inneractive.sdk.player.controller.b0;
+import com.fyber.inneractive.sdk.util.IAlog;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes10.dex */
+public final class a implements Runnable {
+    public final /* synthetic */ Object a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ f d;
+
+    public a(f fVar, com.fyber.inneractive.sdk.player.exoplayer2.upstream.k kVar, int i, int i2, com.fyber.inneractive.sdk.player.exoplayer2.o oVar, int i3, Object obj, long j, long j2, long j3) {
+        this.d = fVar;
+        this.a = obj;
+        this.b = j;
+        this.c = j2;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        b0 b0Var = this.d.b;
+        com.fyber.inneractive.sdk.player.exoplayer2.b.a(this.b);
+        f.a(this.d, this.c);
+        IAlog.a("%s AdaptiveMediaSourceEventListener onLoadStarted called.", b0Var.a());
+    }
+}

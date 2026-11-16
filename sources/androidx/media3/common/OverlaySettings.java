@@ -1,0 +1,49 @@
+package androidx.media3.common;
+
+import android.util.Pair;
+import androidx.media3.common.util.UnstableApi;
+import com.unity3d.services.UnityAdsConstants;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes.dex */
+@UnstableApi
+public interface OverlaySettings {
+    public static final float DEFAULT_ALPHA_SCALE = 1.0f;
+    public static final Pair<Float, Float> DEFAULT_BACKGROUND_FRAME_ANCHOR;
+    public static final float DEFAULT_HDR_LUMINANCE_MULTIPLIER = 1.0f;
+    public static final Pair<Float, Float> DEFAULT_OVERLAY_FRAME_ANCHOR;
+    public static final float DEFAULT_ROTATION_DEGREES = 0.0f;
+    public static final Pair<Float, Float> DEFAULT_SCALE;
+
+    static {
+        Float fValueOf = Float.valueOf(UnityAdsConstants.SafeGuards.InitRequestRetryPolicy.MIN_JITTER_PCT);
+        DEFAULT_BACKGROUND_FRAME_ANCHOR = Pair.create(fValueOf, fValueOf);
+        DEFAULT_OVERLAY_FRAME_ANCHOR = Pair.create(fValueOf, fValueOf);
+        Float fValueOf2 = Float.valueOf(1.0f);
+        DEFAULT_SCALE = Pair.create(fValueOf2, fValueOf2);
+    }
+
+    default float getRotationDegrees() {
+        return UnityAdsConstants.SafeGuards.InitRequestRetryPolicy.MIN_JITTER_PCT;
+    }
+
+    default float getAlphaScale() {
+        return 1.0f;
+    }
+
+    default Pair<Float, Float> getBackgroundFrameAnchor() {
+        return DEFAULT_BACKGROUND_FRAME_ANCHOR;
+    }
+
+    default float getHdrLuminanceMultiplier() {
+        return 1.0f;
+    }
+
+    default Pair<Float, Float> getOverlayFrameAnchor() {
+        return DEFAULT_OVERLAY_FRAME_ANCHOR;
+    }
+
+    default Pair<Float, Float> getScale() {
+        return DEFAULT_SCALE;
+    }
+}

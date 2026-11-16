@@ -1,0 +1,22 @@
+package com.google.android.exoplayer2.metadata.emsg;
+
+import com.google.android.exoplayer2.metadata.Metadata;
+import com.google.android.exoplayer2.metadata.MetadataInputBuffer;
+import com.google.android.exoplayer2.metadata.SimpleMetadataDecoder;
+import com.google.android.exoplayer2.util.Assertions;
+import com.google.android.exoplayer2.util.ParsableByteArray;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes9.dex */
+public final class EventMessageDecoder extends SimpleMetadataDecoder {
+    public EventMessage decode(ParsableByteArray parsableByteArray) {
+        return new EventMessage((String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString()), (String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString()), parsableByteArray.readLong(), parsableByteArray.readLong(), Arrays.copyOfRange(parsableByteArray.getData(), parsableByteArray.getPosition(), parsableByteArray.limit()));
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.SimpleMetadataDecoder
+    public Metadata decode(MetadataInputBuffer metadataInputBuffer, ByteBuffer byteBuffer) {
+        return new Metadata(decode(new ParsableByteArray(byteBuffer.array(), byteBuffer.limit())));
+    }
+}

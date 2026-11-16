@@ -1,0 +1,50 @@
+package com.google.android.gms.internal.ads;
+
+import defpackage.hz4;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes10.dex */
+public final class zzhxa extends zzihc implements zziij {
+    private static final zzhxa zzb;
+    private int zza;
+
+    static {
+        zzhxa zzhxaVar = new zzhxa();
+        zzb = zzhxaVar;
+        zzihc.z(zzhxa.class, zzhxaVar);
+    }
+
+    public static zzhwz F() {
+        return (zzhwz) zzb.v();
+    }
+
+    public static zzhxa G() {
+        return zzb;
+    }
+
+    public final int E() {
+        return this.zza;
+    }
+
+    public final /* synthetic */ void H(int i) {
+        this.zza = i;
+    }
+
+    private zzhxa() {
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzihc
+    public final Object A(zzihb zzihbVar, zzihc zzihcVar) {
+        int iOrdinal = zzihbVar.ordinal();
+        if (iOrdinal != 2) {
+            if (iOrdinal != 3) {
+                if (iOrdinal != 4) {
+                    return null;
+                }
+                return new zzhwz(zzb);
+            }
+            return new zzhxa();
+        }
+        return new hz4(zzb, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u000b", new Object[]{"zza"});
+    }
+}

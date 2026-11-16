@@ -1,0 +1,18 @@
+package com.moloco.sdk;
+
+import com.google.protobuf.GeneratedMessageLite;
+import com.google.protobuf.MessageLiteOrBuilder;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+public final class d3 extends GeneratedMessageLite.Builder implements MessageLiteOrBuilder {
+    public final void a(String str) {
+        copyOnWrite();
+        e3.a((e3) this.instance, str);
+    }
+
+    public final void b(String str) {
+        copyOnWrite();
+        e3.b((e3) this.instance, str);
+    }
+}

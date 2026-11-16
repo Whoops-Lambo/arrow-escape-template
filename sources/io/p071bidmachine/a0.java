@@ -1,0 +1,11 @@
+package io.p071bidmachine;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes.dex */
+public final class a0 implements h {
+    public final /* synthetic */ BidMachineAd a;
+
+    public a0(BidMachineAd bidMachineAd) {
+        this.a = bidMachineAd;
+    }
+}

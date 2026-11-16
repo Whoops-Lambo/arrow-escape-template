@@ -1,0 +1,16 @@
+package com.ironsource;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: renamed from: com.ironsource.n5, reason: case insensitive filesystem */
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+public final class C4880n5 implements InterfaceC4715e1 {
+    @Override // com.ironsource.InterfaceC4715e1
+    @Nullable
+    public InterfaceC5027v9 a(@NotNull Jd jd) {
+        jd.getClass();
+        return null;
+    }
+}

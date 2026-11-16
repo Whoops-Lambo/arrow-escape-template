@@ -1,0 +1,33 @@
+package com.mbridge.msdk.playercommon.exoplayer2.util;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes.dex */
+public final class LibraryLoader {
+    private boolean isAvailable;
+    private boolean loadAttempted;
+    private String[] nativeLibraries;
+
+    public synchronized boolean isAvailable() {
+        if (this.loadAttempted) {
+            return this.isAvailable;
+        }
+        this.loadAttempted = true;
+        try {
+            for (String str : this.nativeLibraries) {
+                System.loadLibrary(str);
+            }
+            this.isAvailable = true;
+        } catch (UnsatisfiedLinkError unused) {
+        }
+        return this.isAvailable;
+    }
+
+    public synchronized void setLibraries(String... strArr) {
+        Assertions.checkState(!this.loadAttempted, "Cannot set libraries after loading");
+        this.nativeLibraries = strArr;
+    }
+
+    public LibraryLoader(String... strArr) {
+        this.nativeLibraries = strArr;
+    }
+}

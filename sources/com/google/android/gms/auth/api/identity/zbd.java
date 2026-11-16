@@ -1,0 +1,16 @@
+package com.google.android.gms.auth.api.identity;
+
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes6.dex */
+public final class zbd {
+    public static final /* synthetic */ zbd[] a = {new zbd("ACCOUNT_SELECTION_TOKEN", 0), new zbd("ACCOUNT_SELECTION_STATE", 1)};
+
+    /* JADX INFO: Fake field, exist only in values array */
+    zbd EF5;
+
+    public static zbd[] values() {
+        return (zbd[]) a.clone();
+    }
+}

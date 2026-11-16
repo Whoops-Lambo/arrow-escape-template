@@ -1,0 +1,14 @@
+package com.adsurge.adn.oversea_ad;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes.dex */
+public final class b0 implements Pyxis {
+    @Override // com.adsurge.adn.oversea_ad.Pyxis
+    public final boolean a(r0 r0Var) {
+        int i = r0Var.a;
+        if (i == -7) {
+            return false;
+        }
+        return !(i == 0);
+    }
+}

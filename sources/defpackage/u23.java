@@ -1,0 +1,12 @@
+package defpackage;
+
+/* JADX INFO: compiled from: r8-map-id-42694b01eabe712a000aa644f349eba7ebddeb4be531d85a6ae3ce68c02c71c6 */
+/* JADX INFO: loaded from: classes7.dex */
+public final class u23 extends v23 {
+    public final g33 a;
+
+    public u23(g33 g33Var) {
+        g33Var.getClass();
+        this.a = g33Var;
+    }
+}
